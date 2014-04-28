@@ -1,12 +1,13 @@
 learnClojure
 ============
 
-Der Versuch, Alex das zu zeigen, was er bisher nie vermisst hat.
+Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 
 ### Fragen, die es zu beantworten gilt
 
-1. Wie kann ich ohne Klassen meine Anwendung strukturieren?
-2. Warum all die Klammern (und IST das wirklich so ;)?
+1. Warum all die Klammern (und IST das wirklich so ;)?
+2. Wie kann ich ohne Klassen meine Anwendung strukturieren?
+3. Wie lese ich Clojure Code (Hint: von innen nach außen, nicht links nach rechts)
 
 ### Outline
 
@@ -34,6 +35,22 @@ Der Versuch, Alex das zu zeigen, was er bisher nie vermisst hat.
 
 
 ### Homoiconicity (Code as Data)
+
+Der Code
+```Clojure
+(+ (* 2 3) (- 3 1)
+```
+wird in den abstrakten Syntax-Baum
+
+```
+       +
+     /   \
+    *     -
+   / \   / \
+  2   3 3   1
+```
+übersetzt.
+
 
 ### Protocols und Deftype
 
@@ -69,4 +86,7 @@ wird zu
 ```Clojure
 (. System/out (println "Hello, world!"))
 ```
-
+oder einfach:
+```Clojure
+(println "Hello, world!")
+```
