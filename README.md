@@ -3,11 +3,14 @@ learnClojure
 
 Der Versuch, Alex das zu zeigen, was er bisher nie vermisst hat.
 
-## Fragen, die es zu beantworten gilt
+### Fragen, die es zu beantworten gilt
 
-1. Wie kann ich ohne Klassen meine Anwendung Strukturieren?
+1. Wie kann ich ohne Klassen meine Anwendung strukturieren?
+2. Warum all die Klammern (und IST das wirklich so ;)?
 
-## Outline
+### Outline
+
+#### Tag 1
 
 1. Clojure & Leiningen installieren  
 2. REPL starten
@@ -15,6 +18,9 @@ Der Versuch, Alex das zu zeigen, was er bisher nie vermisst hat.
 4. Higher-Order Functions
 5. LightTable als Editor
 5. Clojure Koans 
+
+#### Tag 2
+
 6. Homoiconicity
 8. Macros
 9. Protocols und Deftype 
