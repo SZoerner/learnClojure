@@ -20,13 +20,12 @@ Der Versuch, Alex das zu zeigen, was er bisher nie vermisst hat.
 5. [LightTable](http://www.lighttable.com/) als Editor, TDD mit [Midje](https://github.com/marick/Midje)
 5. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
 
-#### Tag 2
+#### Tag 2 - Design Principles
 
-6. Homoiconicity
-7. Higher-Order Functions
-8. Macros
-9. Protocols und Deftype 
-
+1. Immutability: Structural Tree Sharing
+2. Taking Things Apart: Protocols und Deftype, Datomic
+6. Homoiconicity: Macros, Pedestal
+7. Functional Programming: Higher-Order Functions
 
 ### Setup
 
@@ -39,3 +38,35 @@ Der Versuch, Alex das zu zeigen, was er bisher nie vermisst hat.
 ### Protocols und Deftype
 
 - [Artikel: Solving the Expression Problem with Clojure 1.2](http://www.ibm.com/developerworks/library/j-clojure-protocols/)
+
+### Functional Programming
+
+- Clojure => Java 
+
+1. Alle Klammern eine Stelle nach rechts verschieben.
+2. Den ersten Parameter vor die Funktion Stellen
+
+Beispiel:
+
+```Clojure 
+(+ 1 2 3)  
++ (1 2 3)  ; Alle Klammern 1 Stelle nach rechts
+1.+(2 3)   ; 1. Parameter nach vorne
+1.+(2, 3)  ; Kommata (wer's braucht)
+```
+
+
+- Java => Clojure
+
+Das Objekt wird als erster Parameter übergeben.
+Java's 
+
+```Java 
+System.out.println("Hello World");
+``` 
+wird zu 
+
+```Clojure
+(. System/out (println "Hello, world!"))
+```
+
