@@ -15,13 +15,15 @@ Der Versuch, Alex das zu zeigen, was er bisher nie vermisst hat.
 1. Clojure & Leiningen installieren  
 2. REPL starten
 3. Erste Ausdrücke und Funktionen
-4. Higher-Order Functions
-5. LightTable als Editor
-5. Clojure Koans 
+4. Datentypen: Lists, Vectors, Maps, Sets
+4. Funktionen und Variablen: def, defn
+5. [LightTable](http://www.lighttable.com/) als Editor, TDD mit [Midje](https://github.com/marick/Midje)
+5. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
 
 #### Tag 2
 
 6. Homoiconicity
+7. Higher-Order Functions
 8. Macros
 9. Protocols und Deftype 
 
