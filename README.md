@@ -120,13 +120,17 @@ Die bekanntesten Beispiele sind HOF, welche es erlauben, "normale" Operation auf
 (filter even? '(1 2 3 4)) ; => '(2 4)
 ```
 
-- reduce: "reduziert" eine Collection auf einen aggregierten Wert
+- reduce: "reduziert"/aggregiert eine Collection auf einen aggregierten Wert. Erwartet eine Funktion mit zwei Parametern und einem Rückgabewert, einen (optionalen) Initialwert des Aggregators, sowie die Collection. Führt dann iterativ die Funktion f mit dem Aggregator und dem nächsten Wert der Collection aus.
 
 ```Clojure
+;; abstrakt
+(reduce f i '(a b c)) ; => (f c (f b (f a i)))
+
 ;; Berechnet die Summe aller Werte einer Collection
 (reduce + '(1 2 3 4)) ; => 10
 
 ;; klappt auch mit anderen Datentypen als Zahlen
+;; - ein minimalistischer "Webcrawler"
 (def strlist '("fred" "barney" "fred" "wilma")) ; Liste von Strings
 
 (defn addtomap [hmap string]                  ; erwartet eine Map sowie einen String
