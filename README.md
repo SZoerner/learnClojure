@@ -11,15 +11,17 @@ Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 
 ### Outline
 
-#### Tag 1
+#### Tag 1 - Up and Running
 
 1. Clojure & Leiningen installieren  
 2. REPL starten
-3. Erste Ausdrücke und Funktionen
-4. Datentypen: Lists, Vectors, Maps, Sets
-4. Funktionen und Variablen: def, defn
-5. [LightTable](http://www.lighttable.com/) als Editor, TDD mit [Midje](https://github.com/marick/Midje)
-5. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
+3. Erste Ausdrücke, Präfix-Notation, "Taschenrechner"-Beispiel
+4. Datenprimitive: nil, Numbers (Rationals), Symbols, Keywords,
+5. Collections: Lists, Vectors, Maps, Sets
+6. Funktionen und Variablen: def, defn
+7. [LightTable](http://www.lighttable.com/) als Editor
+8. TDD mit [Midje](https://github.com/marick/Midje)
+9. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
 
 #### Tag 2 - Design Principles
 
