@@ -29,6 +29,7 @@ Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 2. Taking Things Apart: Protocols und Deftype, Datomic
 6. Homoiconicity: Macros, Pedestal
 7. Functional Programming: Higher-Order Functions
+8. Lazy Evaluation & Infinite Data Structures
 
 ### Setup
 
@@ -140,4 +141,8 @@ Die bekanntesten Beispiele sind HOF, welche es erlauben, "normale" Operation auf
 (reduce addtomap {} strlist)  
 ; => {"wilma" 1, "barney" 2, "fred" 1}
 ```
+
+### Lazy Evaluation & Infinite Data Structures
+
+
 
