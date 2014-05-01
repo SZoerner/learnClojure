@@ -109,7 +109,7 @@ Die bekanntesten Beispiele sind HOF, welche es erlauben, "normale" Operation auf
 (defn t2 [x] 
   (* 2 x))
 
-(map #(* 2 %) '(1 2 3)) ;; => (2 4 6)
+(map t2 '(1 2 3)) ;; => (2 4 6)
 ```
 
 - filter: erwartet ein Prädikat (eine Funktion, die entweder true oder false zurück gibt), sowie eine Collection. Gibt eine neue Collection zurück, welche nur diejenigen Werte enthält, welche das Prädikat erfüllen.
@@ -121,11 +121,12 @@ Die bekanntesten Beispiele sind HOF, welche es erlauben, "normale" Operation auf
 (filter even? '(1 2 3 4)) ; => (2 4)
 ```
 
-- reduce: "reduziert"/aggregiert eine Collection auf einen aggregierten Wert. Erwartet eine Funktion mit zwei Parametern und einem Rückgabewert, einen (optionalen) Initialwert des Aggregators, sowie die Collection. Führt dann iterativ die Funktion f mit dem Aggregator und dem nächsten Wert der Collection aus.
+- reduce: "reduziert"/aggregiert eine Collection auf einen aggregierten Wert. Erwartet eine Funktion mit zwei Parametern und einem Rückgabewert, einen (optionalen) Initialwert des Aggregators, sowie die Collection. Führt im ersten Schritt die Funktion mit dem Initialwert (wenn nicht vorhanden, ohne Argumente - (+) => 0, (*) => 1, (str) => ""), dann iterativ die Funktion f mit dem Aggregator und dem nächsten Wert der Collection aus.
 
 ```Clojure
 ;; abstrakte Expansion (wirft Fehler im REPL)
 (reduce f i '(a b c)) ; => (f c (f b (f a i)))
+(reduce f '(a b c)) ; => (f c (f b (f a (f))))
 
 ;; Berechnet die Summe der Zahlen 1 bis 4
 (reduce + '(1 2 3 4)) ; => 10
