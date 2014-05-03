@@ -22,6 +22,7 @@ Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 7. [LightTable](http://www.lighttable.com/) als Editor
 8. TDD mit [Midje](https://github.com/marick/Midje)
 9. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
+10. Property-Based Testing: [test.ckeck](https://github.com/clojure/test.check)
 
 #### Tag 2 - Design Principles
 
@@ -173,3 +174,19 @@ Eine Konsequenz der Lazy Evaluation ist, dass das Programm keinerlei Annahmen da
 (take 10 fib) 
 ; => (0 1 1 2 3 5 8 13 21 34)
 ```
+
+### Property-Based Testing
+
+> "Don't write tests. Generate them." - John Hughes
+
+Unit Tests zu schreiben eine mühsame Angelegenheit. Darüber hinaus steigt mit der Verzahnung von Funktionen die Anzahl der möglichen Kombinationen (auch wenn dies streng genommen keine Unit Tests mehr sind).
+
+Beim Property-Based Testing beschreiben die eigentlichen Testfälle generelle funktionale Eigenschaften (z.B. "ein Set besteht aus einzigartigen Werten"). Über Generatoren werden dann beliebig viele Unit Tests mit zufälligen Eingabewerten erzeugt (für primitive Typen sind bereits Generatoren vorhanden) - ``set('(1 2 2 3 4)) -> #{1 2 3 4}``.
+
+Bringt eine Eingabekombination den Testfall zum Scheitern, beginnt das so genannte "Shrinking", dessen Resultat der minimale Testfall ist, welcher den Test nicht erfüllt.
+
+Property-Based Testing verlangt eine etwas andere Herangehensweise an das Erstellen von Testfällen. Einige Heuristiken zur Anlage von Properties: 
+
+- Roundtrip: Das Resultat entspricht den Eingangsdaten - ``g(f(x)) -> x``.
+       - Beispiel 1: Eine zwei Mal umgedrehte Liste entspricht der ursprünglichen Liste - ``reverse(reverse(list)) -> list``. 
+       - Beispiel 2: Das Sortieren einer bereits sortierten Liste entspricht der ursprünglichen Liste - ``sort(sort(list)) -> sort(list)``.
