@@ -13,16 +13,13 @@ Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 
 #### Tag 1 - Up and Running
 
-1. Clojure & Leiningen installieren  
-2. REPL starten
-3. Erste Ausdrücke, Präfix-Notation, "Taschenrechner"-Beispiel
-4. Datenprimitive: nil, Numbers (Rationals), Symbols, Keywords,
-5. Collections: Lists, Vectors, Maps, Sets
-6. Funktionen und Variablen: def, defn
-7. [LightTable](http://www.lighttable.com/) als Editor
-8. TDD mit [Midje](https://github.com/marick/Midje)
-9. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
-10. Property-Based Testing: [test.ckeck](https://github.com/clojure/test.check)
+1. Clojure & Leiningen [Setup](chapters/Setup.md)
+2. Der Umgang mit der [REPL](chapter/REPL.md)
+3. [LightTable](http://www.lighttable.com/) als Editor
+4. Instarepl
+5. TDD mit [Midje](https://github.com/marick/Midje)
+6. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
+7. Property-Based Testing: [test.ckeck](https://github.com/clojure/test.check)
 
 #### Tag 2 - Design Principles
 
@@ -32,45 +29,21 @@ Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 4. Functional Programming: Higher-Order Functions
 5. Lazy Evaluation & Infinite Data Structures
 
-### Setup
-
-1. Leiningen
-2. Ein neues Clojure Projekt erzeugen
-
-
-### Homoiconicity (Code as Data)
-
-Clojure-Programme sind valide Datenstukturen. Der Ausdruck
-```Clojure
-(+ (* 2 3) (- 3 1))
-```
-wird in den abstrakten Syntax-Baum
-
-```
-       +
-     /   \
-    *     -
-   / \   / \
-  2   3 3   1
-```
-übersetzt.
-
-
 ### Protocols und Deftype
 
 - [Artikel: Solving the Expression Problem with Clojure 1.2](http://www.ibm.com/developerworks/library/j-clojure-protocols/)
 
 ### Functional Programming
 
-- Clojure => Java 
+- Clojure => Java
 
 1. Alle Klammern eine Stelle nach rechts verschieben.
 2. Den ersten Parameter vor die Funktion Stellen
 
 Beispiel:
 
-```Clojure 
-(+ 1 2 3)  
+```Clojure
+(+ 1 2 3)
 + (1 2 3)  ; Alle Klammern 1 Stelle nach rechts
 1.+(2 3)   ; 1. Parameter nach vorne
 1.+(2, 3)  ; Kommata (wer's braucht)
@@ -80,12 +53,12 @@ Beispiel:
 - Java => Clojure
 
 Das Objekt wird als erster Parameter übergeben.
-Java's 
+Java's
 
-```Java 
+```Java
 System.out.println("Hello World");
-``` 
-wird zu 
+```
+wird zu
 
 ```Clojure
 (. System/out (println "Hello, world!"))
@@ -107,7 +80,7 @@ Die bekanntesten Beispiele sind HOF, welche es erlauben, "normale" Operation auf
   (cons (f (first coll))      ; wende f auf das erste Element an
         (map f (rest coll)))) ; dann hänge das Ergebnis des rekursiven Aufrufs an
 
-(defn t2 [x] 
+(defn t2 [x]
   (* 2 x))
 
 (map t2 '(1 2 3)) ;; => (2 4 6)
@@ -139,8 +112,8 @@ Die bekanntesten Beispiele sind HOF, welche es erlauben, "normale" Operation auf
 (defn addtomap [hmap string]                  ; erwartet eine Map sowie einen String
   (assoc hmap string (inc (hmap string 0))))  ; ist bereits ein Eintrag 'string' vorhanden, inkrementieren
                                               ; ansonsten den Eintrag 'string' -> 0 hinzufügen
-  
-(reduce addtomap {} strlist)  
+
+(reduce addtomap {} strlist)
 ; => {"wilma" 1, "barney" 2, "fred" 1}
 ```
 
@@ -161,17 +134,17 @@ Eine Konsequenz der Lazy Evaluation ist, dass das Programm keinerlei Annahmen da
 (def natNums (iterate inc 1)) ; - alle natürlichen Zahlen
 
 (take 5 natNums)              ; - evaluiere die ersten 5
-; => (1 2 3 4 5) 
+; => (1 2 3 4 5)
 
 ;; Fibonacci Sequenz
 (defn fib [a b]         ; berechnet die nächste Fibonacci-Zahl
-    [b (+' a b)]) 
+    [b (+' a b)])
 
-(def fibNums 
-    (map first 
+(def fibNums
+    (map first
         (iterate fib [0 1]))) ; - alle Fibonacci Zahlen
 
-(take 10 fib) 
+(take 10 fib)
 ; => (0 1 1 2 3 5 8 13 21 34)
 ```
 
@@ -179,7 +152,7 @@ Eine Konsequenz der Lazy Evaluation ist, dass das Programm keinerlei Annahmen da
 
 > "Don't write tests. Generate them." - John Hughes
 
-Unit Tests zu schreiben eine mühsame Angelegenheit. Darüber hinaus steigt mit der Verzahnung von Funktionen die Anzahl der möglichen Kombinationen (auch wenn dies streng genommen keine Unit Tests mehr sind). Will man etwa eine Sortier-Funktion validieren, so wäre die klassische Herangehensweise: 
+Unit Tests zu schreiben eine mühsame Angelegenheit. Darüber hinaus steigt mit der Verzahnung von Funktionen die Anzahl der möglichen Kombinationen (auch wenn dies streng genommen keine Unit Tests mehr sind). Will man etwa eine Sortier-Funktion validieren, so wäre die klassische Herangehensweise:
 
 1. Erstelle eine Liste - ``(def lst '(1 3 4 2))`` -> der Generator
 2. Sortiere die Liste - ``(def sorted (sort lst))`` -> anwenden der Funktion unter Test
@@ -189,7 +162,7 @@ Diese allgemeine Vorgehensweise wiederholt man dann mit weiteren, möglichst var
 
 Beim Property-Based Testing beschreiben Testfälle eine Ebene abstrakter eben genau nur jene generellen funktionalen Eigenschaften (z.B. "jedes Element einer sortierten Liste ist kleiner oder gleich seinen Nachfolgern"). Die Auswahl der Eingabewerte sowie die Berechnung korrespondierender Erwartungswerte werden dann über Generatoren randomisiert erzeugt (für primitive Typen sind bereits Generatoren vorhanden).
 
-```Clojure 
+```Clojure
 (prop/for-all [v (such-that not-empty (gen/vector gen/int))]   ; Generator[Int]
            (= (apply min v)                                    ; Assertion
               (first (sorted v))))
@@ -197,8 +170,8 @@ Beim Property-Based Testing beschreiben Testfälle eine Ebene abstrakter eben ge
 
 Bringt eine Eingabekombination den Testfall zum Scheitern, beginnt das so genannte "Shrinking" - es wird sukkessiv nach simpleren Eingabewerten mit gleichem Resultat gesucht, so dass letztlich der minimale Testfall gefunden werden kann, welcher den Test nicht erfüllt.
 
-Property-Based Testing verlangt eine etwas andere Herangehensweise an das Erstellen von Testfällen. Einige Heuristiken zur Anlage von Properties: 
+Property-Based Testing verlangt eine etwas andere Herangehensweise an das Erstellen von Testfällen. Einige Heuristiken zur Anlage von Properties:
 
 - Roundtrip: Das Resultat entspricht den Eingangsdaten - ``g(f(x)) -> x``.
-       - Beispiel 1: Eine zwei Mal umgedrehte Liste entspricht der ursprünglichen Liste - ``reverse(reverse(list)) -> list``. 
+       - Beispiel 1: Eine zwei Mal umgedrehte Liste entspricht der ursprünglichen Liste - ``reverse(reverse(list)) -> list``.
        - Beispiel 2: Das Sortieren einer bereits sortierten Liste entspricht der ursprünglichen Liste - ``sort(sort(list)) -> sort(list)``.
