@@ -5,11 +5,6 @@ Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 
 Diese Anleitung ist als [Gitbook](http://www.gitbook.io/) geschrieben und steht unter der MIT License (MIT) - aka. *"[Mach-damit-was-du-willst](https://tldrlegal.com/license/mit-license)*" (solange du die Lizenz erwähnst).
 
-### Fragen, die es zu beantworten gilt
-
-3. Wie kann man ohne Klassen eine Anwendung strukturieren?
-
-
 ### [Outline](SUMMARY.md)
 
 #### Tag 1 - [Up and Running](chapters/Up_and_Running.md)
