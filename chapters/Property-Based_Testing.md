@@ -51,7 +51,24 @@ Das Resultat entspricht den Eingangsdaten - ``g(f(x)) -> x``. Oft gibt es dabei 
 
 ### Trusted-Implementation
 
-Existiert bereits eine Funktion, von der man weiß, dass sie das gewünschte Verhalten korrekt implementiert, kann man diese als Referenz benutzen. Will man etwa einen Algorithmus auf Performanz optimieren, so kann man auf den Standard-Algorithmus zurückgreifen, um die Korrektheit des neuen Ansatzes zu kontinuierlich zu überprüfen.
+Existiert bereits eine Funktion, von der man weiß, dass sie das gewünschte Verhalten korrekt implementiert, kann man diese als Referenz benutzen. Will man etwa einen Algorithmus auf Performanz optimieren, so kann man auf den Standard-Algorithmus zurückgreifen, um die Korrektheit des neuen Ansatzes kontinuierlich zu überprüfen.
+
+```Clojure
+(prop/for-all
+    [a (gen/vector gen/int)]
+    (= (map my-prime? a)
+       (map #(.isProbablePrime (BigInteger/valueOf %) 5) a) ; Java's prime predicate
+```
 
 ### Input/Output relation
+
+Beispiel: Konkateniert (verbindet) man zwei Listen, so ist die Länge der konkatenierten Liste gleich der Summe der Längen beider Listen.
+
+```Clojure
+(prop/for-all
+    [a (gen/vector gen/any)
+     b (gen/vector gen/any)]
+    (= (count (concat a b))
+       (+ (count a) (count b))))
+```
 
