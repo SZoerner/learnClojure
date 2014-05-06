@@ -2,7 +2,7 @@
 
 * [Tag 1 - Up and Running](chapters/Up_and_Running.md)
     * [Setup](chapters/Setup.md)
-    * [REPL](chapters/REPL.md)
+    * [Clojure](chapters/Clojure.md)
     * [LightTable](chapters/LightTable.md)
     * [Midje](chapters/Midje.md)
     * [Property-Based Testing](chapters/Property-Based_Testing.md)

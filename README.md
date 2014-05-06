@@ -14,8 +14,8 @@ Diese Anleitung ist als [Gitbook](http://www.gitbook.io/) geschrieben und steht 
 
 #### Tag 1 - [Up and Running](chapters/Up_and_Running.md)
 
-1. Clojure & Leiningen [Setup](chapters/Setup.md)
-2. Der Umgang mit der [REPL](chapters/REPL.md)
+1. Clojure & Leiningen [Setup](chapters/Setup.md), der Umgang mit der REPL
+2. Einstieg in [Clojure](chapters/Clojure.md)
 3. [LightTable](chapters/LightTable.md) als Editor
 5. TDD mit [Midje](chapters/Midje.md)
 6. [Property-Based Testing](chapters/Property-Based_Testing.md) mit test.ckeck
