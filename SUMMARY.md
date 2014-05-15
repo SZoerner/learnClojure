@@ -4,7 +4,7 @@
     * [Setup](chapters/Setup.md)
     * [Clojure](chapters/Clojure.md)
     * [LightTable](chapters/LightTable.md)
-    * [Midje](chapters/Midje.md)
+    * [Test-Driven Development](chapters/TDD.md)
     * [Property-Based Testing](chapters/Property-Based_Testing.md)
 * [Tag 2 - Design Principles](chapters/Design_Principles.md)
     * [Homoiconicity](chapters/Homoiconicity.md)
