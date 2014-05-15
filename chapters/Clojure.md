@@ -7,7 +7,7 @@ Clojure ist:
 
 - ein LISP
 - für die JVM
-- mit einem Fokus auf Unveränderbarkeit (*Data Immutability*)
+- mit einem Fokus Datenunveränderbarkeit *Data Immutability*
 
 Während der erste Punkt häufig für die größten Einstiegsschwierigkeiten sorgt, ist es der letzte Punkt, welcher die simple, aber mächtige Grundlage der interessantesten Merkmale - wie etwa das Nebenläufigkeitsmodell - liefert.
 
@@ -31,7 +31,7 @@ Clojure's Syntax unterscheidet sich also wie folgt:
 1. die öffnende Klammer ist auf der linken Seite des Funktionsnamens.
 2. es gibt keine Kommata, um Funktionsargumente voneinander abzugrenzen.
 3. Via Konvention werden die Wörter des Funktionsnamens durch Bindestriche getrennt.
- 
+
 .. kein wirklicher Beinbruch.
 
 Clojure Code liest man also nicht von *oben nach unten*, sondern von *innen nach außen*.

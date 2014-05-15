@@ -1,9 +1,11 @@
 learnClojure
 ============
 
-Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
+> Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 
-Diese Anleitung ist als [Gitbook](http://www.gitbook.io/) geschrieben und steht unter der MIT License (MIT) - aka. *"[Mach-damit-was-du-willst](https://tldrlegal.com/license/mit-license)*" (solange du die Lizenz erwähnst).
+Diese Anleitung ist als [Gitbook](http://www.gitbook.io/) geschrieben, steht unter der MIT (aka. *"[Mach-damit-was-du-willst-solange-du-sie-erwähnst](https://tldrlegal.com/license/mit-license)*") License und kann [hier](http://szoerner.github.io/learnClojure) online gelesen werden.
+
+[Gitbook](http://www.gitbook.io/) ist eine (ziemlich coole) Konvention, mittels Markdown Bücher zu erstellen, welche dann als Webseite, pdf oder als eBook verbreitet werden können. Des Weiteren gibt es zum Erstellen und Bearbeiten einen [Editor](https://github.com/GitbookIO/editor/releases) für Windows, Mac und Linux.
 
 ### [Outline](SUMMARY.md)
 
