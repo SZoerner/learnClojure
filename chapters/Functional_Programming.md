@@ -1,37 +1,13 @@
 # Functional Programming
 
-Um aus Clojure "korrespondierenden" Java Code zu bekommen:
+- Immutable Data + First-Class Functions, supporting recursion
+- Recursive iteration over side-effecting loops ("computation of values" over "computation of places")
+- Dynamic Polymorphism (not covered her... yet)
 
-1. Alle Klammern eine Stelle nach rechts verschieben - und schon ist aus gruseligem, mit Klammern überhäuftem Gewisch ein simpler Funktionsaufruf geworden.
-2. Den ersten Parameter vor die Funktion stellen - oder irgend einen anderen... einfach, damit es ein Objekt gibt, auf dem die Funktion aufgerufen wird.
 
-Beispiel:
+## Funktionen
 
-```Clojure
-(+ 1 2 3)
-+ (1 2 3)  ; Alle Klammern 1 Stelle nach rechts
-1.+(2 3)   ; 1. Parameter nach vorne
-1.+(2, 3)  ; Kommata (wer's braucht)
-```
-
-Die andere Seite - Java => Clojure:
-
-- Das Objekt wird als erster Parameter der Funktion "**.**" übergeben.
-
-Java's
-
-```Java
-System.out.println("Hello World");
-```
-wird zu Clojure's
-
-```Clojure
-(. System/out (println "Hello, world!"))
-```
-oder einfach:
-```Clojure
-(println "Hello, world!")
-```
+- Prädikate (Funktionen, deren einzige Rückgabewerte  **true** und **false** sind) werden als Konvention mit einem nachgestellten ``?`` gekennzeichnet: z.B. ``even?``, ``prime?``, oder ``nil?``.
 
 ## Makros
 

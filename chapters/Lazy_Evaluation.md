@@ -64,13 +64,13 @@ Beispiel Random Ints ([hier](https://www.youtube.com/watch?v=ii-ajztxALM) geklau
 ;; commands
 (def rands (take 10 (random-ints 100)))
 
-(first rands)
+(first rands) ; => 1st gets computed
 
-(nth rands 3)
+(nth rands 3) ; => 2nd to 4th get computed
 
-(count rands)
+(count rands) ; remaining get computed
 
-(count rands)
+(count rands) ; no computation anymore
 
 rands
 ```
