@@ -12,4 +12,5 @@
     * [Higher Order Functions](chapters/Higher_Order_Functions.md)
     * [Protocols und Deftype](chapters/Protocols_und_Deftype.md)
     * [Lazy Evaluation](chapters/Lazy_Evaluation.md)
+    * [Concurrency](chapters/Concurrency.md)
 
