@@ -1,9 +1,20 @@
 # Einstieg in Clojure
 
-1. [kurze Einführung in edn](https://github.com/edn-format/edn)
+## edn
 
+- Eine [kurze Einführung in edn](https://github.com/edn-format/edn)
 
-Clojure ist:
+Zusammenfassung:
+1. Leerzeichen und Kommata sind "Whitespace" und somit optional.
+2. Primitive Elemente: nil (oder null oder nothing), true/false, Strings, Characters, Symbole, Keywords (oder Enum Values), Integers, Floats.
+3. Collections: Listen, Vektoren (oder Arrays), Maps, Sets
+4. Notion of Equality.
+
+## Clojure
+
+Clojure ist ..(OMFG).. edn. Ende. Du hast soeben sämtliche Syntax gelernt.
+
+Darüber hinaus ist Clojure:
 
 - ein LISP
 - für die JVM
@@ -11,7 +22,7 @@ Clojure ist:
 
 Während der erste Punkt häufig für die größten Einstiegsschwierigkeiten sorgt, ist es der letzte Punkt, welcher die simple, aber mächtige Grundlage der interessantesten Merkmale - wie etwa das Nebenläufigkeitsmodell - liefert.
 
-## Ein kurzer Syntax-Vergleich
+## Ein Syntax-Vergleich
 
 
 In C-artigen Sprachen sieht ein Funktionsaufruf meist so aus:
@@ -40,7 +51,7 @@ Ja genau - so wie man mathematische Ausdrücke berechnet:
 (7 - 4) / (2 + 4) + 5
 ```
 
-Und letztendlich ist das auch gar kein schlechter Vergleich: nachdem du jahrelang im Matheunterricht nur mit Zahlen jongliert hast, kommt irgendwann der Zeitpunkt, an dem erste Symbole eingeführt werden: z.B. *Pi* als Konstante für die Zahl 3.1415...
+Und letztendlich ist das auch gar kein schlechter Vergleich: nachdem jahrelang im Matheunterricht nur mit Zahlen jongliert wurde, kommt irgendwann der Zeitpunkt, an dem erste Symbole eingeführt werden: z.B. ***Pi*** als Konstante für die Zahl 3.1415...,
 
 1. Erste Ausdrücke, Präfix-Notation, "Taschenrechner"-Beispiel
 2. Datenprimitive: nil, Numbers (Rationals), Symbols, Keywords,

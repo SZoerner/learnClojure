@@ -26,7 +26,7 @@ Für Clojure existiert die Bibliothekt [test.ckeck](https://github.com/clojure/t
 
 Bringt eine Eingabekombination den Testfall zum Scheitern, beginnt das so genannte "Shrinking" - es wird sukkessiv nach simpleren Eingabewerten mit gleichem Resultat gesucht, so dass letztlich der minimale Testfall gefunden werden kann, welcher den Test nicht erfüllt.
 
-Property-Based Testing verlangt eine etwas andere Herangehensweise an das Erstellen von Testfällen. Hier einige Heuristiken zur Anlage von Properties (aus Reid Draper's talk *[Powerful Testing with test.check](https://www.youtube.com/watch?v=JMhNINPo__g)*):
+Property-Based Testing verlangt eine etwas andere Herangehensweise an das Erstellen von Testfällen. Hier einige Heuristiken zur Anlage von Properties (aus Reid Draper's talk *[Powerful Testing with test.check](https://www.youtube.com/watch?v=JMhNINPo__g)*) - Roundtrip, Trusted-Implementation und Input/Output relation:
 
 ### Roundtrip
 
