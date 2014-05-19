@@ -40,7 +40,7 @@ Das Resultat entspricht den Eingangsdaten - ``g(f(x)) -> x``. Oft gibt es dabei 
     (= list
     (reverse(reverse(list)))))
 ```
-- Beispiel 2: Das erneute Sortieren einer bereits sortierten Liste entspricht der sortierten Liste.
+- Beispiel 2: Das erneute Sortieren einer bereits sortierten Liste entspricht der sortierten Liste (Funktionen, welche das gleiche Resultat liefern, egal wie oft man sie aufruft, nennt man *idempotent*).
 
 ```Clojure
 (prop/for-all
