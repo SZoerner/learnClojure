@@ -6,13 +6,13 @@
 
 Zusammenfassung:
 1. Leerzeichen und Kommata sind "Whitespace" und somit optional.
-2. Primitive Elemente: nil (oder null oder nothing), true/false, Strings, Characters, Symbole, Keywords (oder Enum Values), Integers, Floats.
-3. Collections: Listen, Vektoren (oder Arrays), Maps, Sets
+2. Primitive Elemente: nil (oder null oder nothing), true/false, Strings, Characters, Symbole, Keywords (Enum Values), Integers, Floats.
+3. Collections: Listen, Vektoren (Arrays), Maps, Sets
 4. Notion of Equality.
 
 ## Clojure
 
-Clojure ist ..(OMFG).. edn. Ende. Du hast soeben sämtliche Syntax gelernt.
+Clojure ist .. (OMFG) .. edn. Ende. Du hast soeben sämtliche Syntax gelernt.
 
 Darüber hinaus ist Clojure:
 
@@ -48,8 +48,14 @@ Clojure's Syntax unterscheidet sich also wie folgt:
 Clojure Code liest man also nicht von *oben nach unten*, sondern von *innen nach außen*.
 Ja genau - so wie man mathematische Ausdrücke berechnet:
 ```
-(7 - 4) / (2 + 4) + 5
+(2 * 3 + 6) / 4
 ```
+Als valider Clojue-Ausdruck:
+
+```Clojure
+(/ (+ (* 2 3) 6) 4)
+```
+Was hier der Unterschied ist: Binäre Operatoren, welche in den meisten Programmiersprachen zwischen ihre Argumente geschrieben werden (Infix-Notation), werden in LISP genau wie andere Funktionen an erste Stelle - sprich vor ihre Argumente - positioniert (Präfix-Notation). Aus ``2 * 3`` wird ``(* 2 3)``.
 
 Und letztendlich ist das auch gar kein schlechter Vergleich: nachdem jahrelang im Matheunterricht nur mit Zahlen jongliert wurde, kommt irgendwann der Zeitpunkt, an dem erste Symbole eingeführt werden: z.B. ***Pi*** als Konstante für die Zahl 3.1415...,
 
