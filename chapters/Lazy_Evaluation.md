@@ -74,3 +74,23 @@ Beispiel Random Ints ([hier](https://www.youtube.com/watch?v=ii-ajztxALM) geklau
 
 rands
 ```
+
+Beispiel Monitor: Welche Seitenlängen hat ein 61cm Diagonale Bildschirm mit dem Seitenverhältnis 16:9?
+
+```Clojure
+;; Params: Hypothenuse, x:y Verhältnis, Genauigkeit
+(defn ratios [hyp [x y] acc]
+  ;; List comprehension
+  (for
+    ;; for all ints < hyp
+    [a (range hyp)
+     ;; temp variable assignments
+     :let [b (/ (* a x) y)
+           c (Math/sqrt (+ (* a a) (* b b)))
+           diff (Math/abs (- hyp c))]
+     :when (< diff acc)]
+    ;; return the vector of a, b & c
+    [a b c]))
+
+(ratios 61 [16.0 9] 1)
+```

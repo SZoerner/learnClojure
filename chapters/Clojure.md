@@ -5,7 +5,7 @@
 - Eine [kurze Einführung in edn](https://github.com/edn-format/edn)
 
 Zusammenfassung:
-1. Leerzeichen und Kommata sind "Whitespace" und somit optional.
+1. Blanks and Commas are whitespace and therefore optional.
 2. Primitive Elemente: nil (oder null oder nothing), true/false, Strings, Characters, Symbole, Keywords (Enum Values), Integers, Floats.
 3. Collections: Listen, Vektoren (Arrays), Maps, Sets
 4. Notion of Equality.
@@ -63,6 +63,64 @@ Und letztendlich ist das auch gar kein schlechter Vergleich: nachdem jahrelang i
 2. Datenprimitive: nil, Numbers (Rationals), Symbols, Keywords,
 3. Collections: Lists, Vectors, Maps, Sets
 4. Funktionen und Variablen: def, defn
+
+## Equality
+
+The only false-y values in Clojure are `nil` and `false`.
+
+## Functions
+
+> stolen from David Nolen's [Cljs Tutorial for Light Table Users](https://github.com/swannodette/lt-cljs-tutorial/blob/master/lt-cljs-tutorial.cljs).
+
+Functions are the essence of any significant Clojure program. They provide the instruction set for *transforming data*.
+
+Here is a simple function that takes two arguments and adds them.
+
+```Clojure
+(defn add [a b]
+  (+ a b))
+
+(add 1 2)  ; => 3
+```
+
+Functions can have multiple arities.
+
+```Clojure
+(defn foo2
+  ([a b] (+ a b))
+  ([a b c] (* a b c)))
+
+(foo2 3 4)
+(foo2 3 4 5)
+```
+
+Which can be used to supply default values.
+
+```Clojure
+(defn defaults
+  ([x] (defaults x :default))
+  ([x y] [x y]))
+
+(defaults :explicit)
+(defaults :explicit1 :explicit2)
+```
+
+- Functions support any number of arguments via rest arguments.
+
+```Clojure
+;; any argument after b is stored in the vector d.
+(defn foo3 [a b & d]
+  [a b d])
+
+(foo3 1 2)
+(foo3 1 2 3 4)
+```
+
+Finally you can apply functions to a collection. This results in retrieving each element of the collection and providing them as arguments to the function.
+
+```Clojure
+(apply + [1 2 3 4 5])
+```
 
 ## Syntax die 2.
 
