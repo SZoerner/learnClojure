@@ -2,7 +2,26 @@
 
 > "Don't write tests. Generate them." - John Hughes
 
-## Statische Test-Definition
+## Unit Testing by Examples
+
+Consider this: You want to write function, which given an Integer, returns a list containing the unique prime factors of the input.
+Besides the actual implementation, how do you verify your function actuall behaves correctly? Well, you write tests.
+
+```Clojure
+(defn prime-factors [n]
+;; ... implementation
+)
+
+;; Tests
+(= '(2) (prime-factors 2))
+(= '(3) (prime-factors 3))
+(= '(5) (prime-factors 25)
+(= '(11 3) (prime-factors 9801))
+...
+```
+You may already see the pattern: You are testing ``by example``: "*Given this input to my function under test, I expect that result..*"
+As you go along and describe more and more examples, this can become quite cumbersome. Moreover,
+
 
 Unit Tests zu schreiben eine mühsame Angelegenheit. Darüber hinaus steigt mit der Verzahnung von Funktionen die Anzahl der möglichen Kombinationen (auch wenn dies streng genommen keine Unit Tests mehr sind). Will man etwa eine Sortier-Funktion validieren, so wäre die klassische Herangehensweise:
 
