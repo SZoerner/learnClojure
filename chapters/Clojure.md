@@ -180,7 +180,7 @@ Which can be used to supply default values.
 - Functions support any number of arguments via rest arguments.
 
 ```Clojure
-;; any argument after b is stored in the vector d.
+; any argument after b is stored in the vector d.
 (defn foo3 [a b & d]
   [a b d])
 
@@ -210,7 +210,7 @@ You can access the metadata by the meta method which should be executed against 
 
 ```Clojure
 (meta #'five)
-;; => {:ns #<Namespace user>, :name five, :column 1, :debug true, :line 1, :file "NO_SOURCE_PATH"}
+; => {:ns #<Namespace user>, :name five, :column 1, :debug true, :line 1, :file "NO_SOURCE_PATH"}
 ```
 
 ``#'`` is the var quote and useful when you want to talk about the reference/declaration instead of the value it represents.

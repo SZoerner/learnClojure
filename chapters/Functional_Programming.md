@@ -82,11 +82,11 @@ Isolation (Referential transparancy) aka *I can't see outside myself*: A referen
 
 **Aufgabe**: Schreibe eine Funktion, welche alle Elemente einer Liste von Ganzzahlen jeweils um Eins erhöht.  => [Lösung](exercises/Exercises.md)
 ```Clojure
-;;Test
+;Test
 (add-one '(1 2 3 4)) ; => (2 3 4 5)
 
-;; Prop-Test:
-;; sum(orig) == sum(add-one(orig)) + length(orig)
+; Prop-Test:
+; sum(orig) == sum(add-one(orig)) + length(orig)
 (prop/for-all
     [list gen/vector gen/int]
     (= (reduce + (add-one list))

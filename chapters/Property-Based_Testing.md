@@ -9,10 +9,10 @@ Besides the actual implementation, how do you verify your function actuall behav
 
 ```Clojure
 (defn prime-factors [n]
-;; ... implementation
+; ... implementation
 )
 
-;; Tests
+; Tests
 (= '(2) (prime-factors 2))
 (= '(3) (prime-factors 3))
 (= '(5) (prime-factors 25)
