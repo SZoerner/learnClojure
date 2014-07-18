@@ -1,6 +1,8 @@
 learnClojure
 ============
 
+[ ![Codeship Status for SZoerner/learnClojure](https://www.codeship.io/projects/cd490660-f0c9-0131-6150-66d8ca7dad4d/status)](https://www.codeship.io/projects/27511)
+
 > Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
 
 Diese Anleitung ist als [Gitbook](http://www.gitbook.io/) geschrieben, steht unter der MIT (aka. *"[Mach-damit-was-du-willst-solange-du-sie-erwähnst](https://tldrlegal.com/license/mit-license)*") License und kann [hier](http://szoerner.github.io/learnClojure) online gelesen werden.
