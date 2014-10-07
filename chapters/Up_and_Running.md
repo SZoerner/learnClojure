@@ -1,8 +1,5 @@
-# Tag 1 - Up and Running
+# Part 1 - Up and Running
 
-Hallo, wissbegieriger Wanderer :) Schön, dass du den Weg gefunden hast - ich hatte es ja kaum noch erwartet.
+Hi there, curious friend :) Awesome, that you found your way - this is your first step towards enlightenment.
 
-Hier sind vorab einige Fragen, die du stellen magst und welche dir hoffentlich am Ende des Tages beantwortet werden:
-
-1. Warum sich überhaupt die Zähne ausbeißen an etwas anderem als Java/C/Assembler/Binärzahlen?
-2. Warum nur all die Klammern (und **ist** das wirklich so ;)?
+This first introductory part will set you up with everything you need to start hacking - which is a astonishingly small amount.

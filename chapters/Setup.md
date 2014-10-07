@@ -2,15 +2,19 @@
 
 ## Leiningen
 
-[Leiningen](http://leiningen.org/) ist ein Kommandozeilen-Taskrunner zur Verwaltung von Clojure Projekten. Darunter fallen Build-Management, Dependency Resolution sowie die Möglichkeit, eigene Tasks zu beschreiben - quasi Cake für Clojure. Für Windows-Nutzer gibt es den [leiningen-win-installer](http://leiningen-win-installer.djpowell.net/), welcher einen grafischen Installationsdialog benutzt.
+[Leiningen](http://leiningen.org/) is a command line taskrunner to manage Clojure artifacts and the nitty-gritty of fast development.
+Think of it as the fusion of Maven, Ant and a fusion reactor. It covers among other things tasks such as build management, dependency resolution, provides an interactive shell (REPL, which we will use later on) plus can be further extended via plugins.
 
-Nach Abschluss der Installation ist die Datei ``lein.bat`` zur PATH Variablen hinzugefügt worden, welche Leiningen startet. Des weiteren wurde LEIN_JAVA_CMD auf das ausgewählte JDK gesetzt sowie die :java-cmd property im Benutzerprofil der ``profiles.clj`` gesetzt.
+If you are using Windows, there is the [leiningen-win-installer](http://leiningen-win-installer.djpowell.net/) for a graphical installation process. For Linux there surely is an equivalent rpm / deb /xx package. OSX users can get it via homebrew.
+
+After the installation is completed, open a shell and call ``lein`` - you should see some output starting with "*Leiningen is a tool for working with Clojure projects.*"
+If you do, call ``lein repl`` to start the interactive shell.
 
 ## REPL
 
-Die ***R***ead-***E***val-***P***rint-***L***oop ist eine Kommandozeile zur Interaktion mit dem Programm. Der Name geht zurück auf die schrittweise Interaktion mit dem Nutzer:
+A ***R***ead-***E***val-***P***rint-***L***oop is just like a command shell but to interact with the your programm. The name comes from the steps of interaction that happen each time you enter a command:
 
-1. *Read*: Einlesen der Konsoleneingabe als Textzeichen.
-2. *Eval*: Evaluieren Eingabe als Programmcode.
-3. *Print*: Ausgabe des Rückgabewertes auf der Konsole.
-4. *Loop*: Zurück in den Ausgangszustand (Read).
+1. *Read*: the console input as text.
+2. *Eval*: the input as instructions.
+3. *Print*: the response value back to the console screen.
+4. *Loop*: back o the beginning.

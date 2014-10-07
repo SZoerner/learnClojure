@@ -70,7 +70,7 @@ The same function call in Clojure would be:
 (do-something-with value1 value2)
 ```
 
-These are the differences: 
+These are the differences:
 
 1. The open parenthesis appears **left** to the name of the called function - ``print("hi")`` becomes ``(print "hi")``.
 2. There are no commas separating arguments (there can, but they are considered whitespace and thus being ignored), nor semicolons at the end of statements (``;`` starts a comment line).
@@ -117,9 +117,9 @@ or just:
 (println "Hello, world!")
 ```
 
-## Parentheses 
+## Parentheses
 
-What still scares people when first getting in touch with a LISP is the at first glance *huge amount of parantheses*. It is hard to argue with that, as the parenthesis is in essence *all of the syntax*. 
+What still scares people when first getting in touch with a LISP is the at first glance *huge amount of parantheses*. It is hard to argue with that, as the parenthesis is in essence *all of the syntax*.
 
 You see: Java got its ``()``, ``{}``, ``,`` and ``;`` to mark the structure of code - LISP got: correct.. ``()``. In addition, LISP code is quite likely to be more nested than C-like languages with their procedural heritage.
 It is therefore not read from *left to right*, but instead from *the inside out* - quite like you would read mathematical calculations:
@@ -134,7 +134,7 @@ As a valid Clojure expression:
 (/ (+ (* 2 3) 6) 4)
 ```
 
-The difference is: In C-like languages, binary operators such as ``+`` (being called binary as they accept two arguments) are placed *between* the function arguments (called infix-notation). In LISP however, they are treated just like normal functions and are therefore placed *before* the arguments (called prefix-notation). ``2 * 3`` becomes ``(* 2 3)``. In fact: they are not binary operators -  ``(+ 2 3 4 5)`` is a valid expression, and as you would expect and returns the sum of all arguments - in this case ``14``. 
+The difference is: In C-like languages, binary operators such as ``+`` (being called binary as they accept two arguments) are placed *between* the function arguments (called infix-notation). In LISP however, they are treated just like normal functions and are therefore placed *before* the arguments (called prefix-notation). ``2 * 3`` becomes ``(* 2 3)``. In fact: they are not binary operators -  ``(+ 2 3 4 5)`` is a valid expression, and as you would expect and returns the sum of all arguments - in this case ``14``.
 
 ## Equality
 

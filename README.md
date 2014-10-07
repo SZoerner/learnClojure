@@ -1,29 +1,24 @@
 learnClojure
 ============
 
-[ ![Codeship Status for SZoerner/learnClojure](https://www.codeship.io/projects/cd490660-f0c9-0131-6150-66d8ca7dad4d/status)](https://www.codeship.io/projects/27511)
+This tutorial is written as a [Gitbook](http://www.gitbook.io/), is published under the [WTFPL-2.0](https://www.tldrlegal.com/l/wtfpl) License
+and is availiable online [here](http://szoerner.github.io/learnClojure).
 
-> Der Versuch, Alex einen Blick auf das zu geben, was er bisher nie vermisst hat.
+## Outline
 
-Diese Anleitung ist als [Gitbook](http://www.gitbook.io/) geschrieben, steht unter der MIT (aka. *"[Mach-damit-was-du-willst-solange-du-sie-erwähnst](https://tldrlegal.com/license/mit-license)*") License und kann [hier](http://szoerner.github.io/learnClojure) online gelesen werden.
+### Part 1 - [Up and Running](chapters/Up_and_Running.md)
 
-[Gitbook](http://www.gitbook.io/) ist eine (ziemlich coole) Konvention, mittels Markdown Bücher zu erstellen, welche dann als Webseite, pdf oder als eBook verbreitet werden können. Des Weiteren gibt es zum Erstellen und Bearbeiten einen [Editor](https://github.com/GitbookIO/editor/releases) für Windows, Mac und Linux.
+1. Clojure and Leiningen [Setup](chapters/Setup.md), using the REPL
+2. Introduction to [Clojure](chapters/Clojure.md)
+3. [LightTable](chapters/LightTable.md) as an editor
+5. [Test-Driven Development](chapters/TDD.md) with clojure.test
+6. [Property-Based Testing](chapters/Property-Based_Testing.md) using test.check
+7. Project Euler exercises
 
-### [Outline](SUMMARY.md)
+### Part 2 - Design Principles
 
-#### Tag 1 - [Up and Running](chapters/Up_and_Running.md)
-
-1. Clojure & Leiningen [Setup](chapters/Setup.md), der Umgang mit der REPL
-2. Einstieg in [Clojure](chapters/Clojure.md)
-3. [LightTable](chapters/LightTable.md) als Editor
-5. [Test-Driven Development](chapters/TDD.md) mit clojure.test
-6. [Property-Based Testing](chapters/Property-Based_Testing.md) mit test.check
-7. TDD Kata: [String Calculator](http://osherove.com/tdd-kata-1/), [Code](https://github.com/nchapon/string-calculator)
-
-#### Tag 2 - Design Principles
-
-1. Data Immutability: Structural Tree Sharing
-2. [Homoiconicity](chapters/Homoiconicity.md): Macros, Pedestal
+1. Data Immutability: Persistent Data Structures, Structural Tree Sharing
+2. [Homoiconicity](chapters/Homoiconicity.md): Macros
 3. [Functional Programming](Functional_Programming.md): Higher-Order Functions
-4. Taking Things Apart: IDKAIDWK, Protocols und Deftype, Datomic
+4. Taking Things Apart: IDKAIDWK, Protocols and Deftype, Datomic
 5. [Lazy Evaluation](Lazy_Evaluation.md) & Infinite Data Structures
