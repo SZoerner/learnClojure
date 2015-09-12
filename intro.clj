@@ -1,19 +1,23 @@
 #!/usr/bin/env lein-exec
 
+;;; ===========================================================================
 ;;; == A gentle introduction into Clojure =====================================
+;;' ===========================================================================
 
 ; Hello World
 
 "Hello World"
 
-;;; == edn ====================================================================
 
-;;; edn is a concise [e]xtensible [d]ata [n]otation
-;;; think of it (for now!) as 'json on steroids'
-;;; https://github.com/edn-format/edn
+;;; ===========================================================================
+;;; == edn ==
+;;; ===========================================================================
 
-;;; It's got basic elements such as
+;; edn is a concise [e]xtensible [d]ata [n]otation
+;; think of it (for now!) as 'json on steroids'
+;; https://github.com/edn-format/edn
 
+;; It's got basic elements such as
 
 42            ; numbers
 
@@ -24,10 +28,11 @@
 17/4          ; Rationals which keep precision
 
 
+;;; ===========================================================================
 ;;; == () [] {} #{} ===========================================================
+;;; ===========================================================================
 
-
-;;; There are collection types, such as
+;; There are collection types, such as
 
 ["the" "vector"]   ; vectors
 
@@ -37,29 +42,46 @@
 
 '(1 2 3)           ; .. and last but not least: lists
 
-;;; and they all are all nestable
+;; and they all are all nestable
 
 {:commata, ["they" :are] '(:treated "as") "whitespace"}
 
 
-;;; == Evaluation =============================================================
+;;; ===========================================================================
+;;; == Evaluation and Homoiconicity ===========================================
+;;; ===========================================================================
 
-;;; why '(1 2 3), and not (1 2 3) you ask?
+;; why '(1 2 3), and not (1 2 3) you ask?
+
 
 (1 2 3)
+;; when you evaluate a list, Clojure treats the first item as a function and calls it
 
-;;; a function call with two parameters => (fn arg1 arg2)
-
+;; a function call with two parameters => (fn arg1 arg2)
 (str 2 3)
 
-;;; a list of three elements
+;; so you have to quote the list
+(quote (1 2 3))
+
+;; shorthand: '
+;; a list of three elements
 '(str 2 3)
 
-; (launch the missiles)
+(def fun '(str 2 3))
 
+;; treating code as data
+(first fun) ;; => +
+
+;; manipulating code
+(eval (conj (rest fun) '+))
+;; Note: In normal code, eval is rarely used. => (launch the missiles)
+
+
+;;; ===========================================================================
 ;;; == Immutability ===========================================================
+;;; ===========================================================================
 
-;;; All data and collections in Clojure are immutable
+;; All data and collections in Clojure are immutable
 
 (def col {:a "a" :b "b"})
 
@@ -73,28 +95,29 @@ col
 ; Well - did u ever had a race condition on string manipulation?
 
 
-;;; if you do not modify anything, there are no 'read-after-write' problems
+;; if you do not modify anything, there are no 'read-after-write' problems
 
-;;; it also makes reasoning a lot easier
+;; it also makes reasoning a lot easier
 
 
 
-;;; Ok, we need to have mutable state SOMEWHERE in the program
-;;; otherwise it would not do anything useful
+;; Ok, we need to have mutable state SOMEWHERE in the program
+;; otherwise it would not do anything useful
 
 
 ;;; == Functional core, imperative shell ======================================
 
-;;; We try keep the amount of mutable state as low as the bare minimum
+;; We try keep the amount of mutable state as low as the bare minimum
 
 
-;;; ?? this sounds like a performance nightmare!
+;; ?? this sounds like a performance nightmare!
 
-;;; persistent data structures to the rescue!!
+;; persistent data structures to the rescue!!
 
 
-
+;;; ===========================================================================
 ;;; == Anonymous functions ====================================================
+;;; ===========================================================================
 
 ((fn [a b] (+ a b)) 3 4)
 
@@ -108,8 +131,9 @@ col
 ; no need for operator precedence defined in the language compiler
 (* 4 (+ 4 6 (* 3 2)))
 
+;;; ===========================================================================
 ;;; == Simplicity =============================================================
-
+;;; ===========================================================================
 
 ; no ambiguity
 ; all you need for parsing is
@@ -155,29 +179,33 @@ col
 
 (bla2 7)
 
-;;; Let macro ;;;
+;; Let macro ;;;
 (let [test 4]
   test)
 
 ((fn [test]
    test)4)
 
+;;; ===========================================================================
 ;;; == Java Interop ===========================================================
+;;; ===========================================================================
 
-;;; creating a new object
+;; creating a new object
 (def someval (new java.lang.String "Oi!"))
 
 someval
 
-;;; method invocation
+;; method invocation
 ;; -> the first parameter is the object the method gets called on
 (.length someval)
 
-;;; Hashmaps as configuration files
+;; Hashmaps as configuration files
 
 ; TODO see LightTable user keymaps
 
-;;; == Transducer =============================================================
+;;; ===========================================================================
+;;; == Transducers ============================================================
+;;; ===========================================================================
 
 ;;      +
 ;;     / \
@@ -195,7 +223,73 @@ someval
 ;; http://programmablelife.blogspot.de/2012/08/conways-game-of-life-in-clojure.html
 
 
+;;; ===========================================================================
 ;;; == core.async =============================================================
+;;; ===========================================================================
+
+
+;;; ===========================================================================
+;;; == Quil ===================================================================
+;;; ===========================================================================
+
+(require '[quil.core :as q]
+         '[quil.middleware :as m]) ;; yes, no namespace declaration
+
+
+(defn setup []
+  ; Set frame rate to 30 frames per second.
+  (q/frame-rate 30)
+  ; Set color mode to HSB (HSV) instead of default RGB.
+  (q/color-mode :hsb)
+  ; setup function returns initial state. It contains
+  ; circle color and position.
+  {:color 0
+   :angle 0})
+
+(defn update-state [state]
+  ; Update sketch state by changing circle color and position.
+  {:color (mod (+ (:color state) 0.7) 255)
+   :angle (+ (:angle state) 0.1)})
+
+(defn draw-state [state]
+  ; Clear the sketch by filling it with light-grey color.
+  (q/background 240)
+  ; Set circle color.
+  (q/fill (:color state) 255 255)
+  ; Calculate x and y coordinates of the circle.
+  (let [angle (:angle state)
+        x (* 150 (q/cos angle))
+        y (* 150 (q/sin angle))]
+    ; Move origin point to the center of the sketch.
+    (q/with-translation [(/ (q/width) 2)
+                         (/ (q/height) 2)]
+      ; Draw the circle.
+      (q/ellipse x y 100 100))))
+
+(q/defsketch quil-workflow
+  :title "You spin my circle right round"
+  :size [500 500]
+  ; setup function called only once, during sketch initialization.
+  :setup setup
+  ; update-state is called on each iteration before draw-state.
+  :update update-state
+  :draw draw-state
+  :features [:keep-on-top]
+  ; This sketch uses functional-mode middleware.
+  ; Check quil wiki for more info about middlewares and particularly
+  ; fun-mode.
+  :middleware [m/fun-mode])
+
+
+;; Tree algorithm
+;; http://quil.info/sketches/show/example_tree
 
 
 ;; https://github.com/clojure/core.async/blob/master/examples/walkthrough.clj
+
+;;; ===========================================================================
+;;; == HoneySQL ===============================================================
+;;; ===========================================================================
+
+;; SQL as Clojure data structures.
+;; https://github.com/jkk/honeysql
