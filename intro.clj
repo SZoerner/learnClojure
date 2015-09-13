@@ -70,11 +70,15 @@
 (def fun '(str 2 3))
 
 ;; treating code as data
-(first fun) ;; => +
+(first fun) ;; => str
 
-;; manipulating code
-(eval (conj (rest fun) '+))
-;; Note: In normal code, eval is rarely used. => (launch the missiles)
+;; manipulating data
+(def more-fun (conj (rest fun) '+))
+
+;; tirning it back into code
+(eval more-fun)
+
+;; Note: Usually, eval is rarely used. => (launch the missiles)
 
 
 ;;; ===========================================================================
@@ -89,11 +93,10 @@
 
 col
 
-; => like Java Strings
+;; => like Java Strings
 
-; why would you want that?
-; Well - did u ever had a race condition on string manipulation?
-
+;; why would you want that?
+;; Well - did u ever had a race condition on string manipulation?
 
 ;; if you do not modify anything, there are no 'read-after-write' problems
 
@@ -126,29 +129,60 @@ col
 
 ;; Prefix notation allows us to treat 'special operators' like normal functions
 
-; foo(bar(3,4),5) => (foo (bar 3 4) 5
+;; foo(bar(3,4),5) => (foo (bar 3 4) 5
 
-; no need for operator precedence defined in the language compiler
+;; no need for operator precedence defined in the language compiler
 (* 4 (+ 4 6 (* 3 2)))
 
 ;;; ===========================================================================
 ;;; == Simplicity =============================================================
 ;;; ===========================================================================
 
-; no ambiguity
-; all you need for parsing is
-; block indicator     => '(' and ')'
-; and token delimiter => ' '
+;; no ambiguity
+;; all you need for parsing is
+;; block separator     => '(' and ')'
+;; and token delimiter => ' '
 
 
-; the precedence always is:
-; - the first element is the function
-; - all other elements are the arguments to be applied to the function
+;; the precedence always is:
+;; - the first element is the function
+;; - all other elements are the arguments to be applied to the function
 
+;; Example: Dealing Texas Hold'em Cards
+
+;; ranks are represented as numbers from 1 to 13
+(def ranks (range 1 14))
+
+;; suits are represented as keywords
+(def suits [:spades :hearts :diamonds :clubs])
+
+;; combine each suit with each rank
+(defn combine [s] (map vector rank (repeat s)))
+
+;; a deck is the combination of each suit and rank
+(def deck
+  (mapcat #(map vector ranks (repeat %)) suits))
+
+deck
+
+;; take two cards from the shuffled deck
+(take 2 (shuffle deck))
+
+
+;; or - everything in shorthand:
+(->> (mapcat #(map vector (range 13) (repeat %))
+             [:spades :hearts :diamonds :clubs])
+     shuffle
+     (take 2))
+
+;; imagine the corresponding Java Code:
+;; 1. Creating Classes for Suit and Rank
+;; 2. Defining getters and setters
+;; 3. Defining methods!! for combination
 
 ;;; Point free notation ;;;
 
-; some aliases
+;; some aliases
 (def & comp)
 (def p partial)
 
@@ -171,7 +205,7 @@ col
 
 (bla 7)
 
-;; Threading macro ;;;
+;; Threading macro
 (defn bla2 [n]
   (->> n
        (* 4)
@@ -179,7 +213,7 @@ col
 
 (bla2 7)
 
-;; Let macro ;;;
+;; Let macro
 (let [test 4]
   test)
 
@@ -235,6 +269,31 @@ someval
 (require '[quil.core :as q]
          '[quil.middleware :as m]) ;; yes, no namespace declaration
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Official demo - https://github.com/quil/quil
+
+(defn setup []
+  (q/smooth)                          ;; Turn on anti-aliasing
+  (q/frame-rate 1)                    ;; Set framerate to 1 FPS
+  (q/background 200))                 ;; Set the background colour to
+                                      ;; a nice shade of grey.
+(defn draw []
+  (q/stroke (q/random 255))           ;; Set the stroke colour to a random grey
+  (q/stroke-weight (q/random 10))     ;; Set the stroke thickness randomly
+  (q/fill (q/random 255))             ;; Set the fill colour to a random grey
+
+  (let [diam (q/random 100)           ;; Set the diameter to a value between 0 and 100
+        x    (q/random (q/width))     ;; Set the x coord randomly within the sketch
+        y    (q/random (q/height))]   ;; Set the y coord randomly within the sketch
+    (q/ellipse x y diam diam)))       ;; Draw a circle at x y with the correct diameter
+
+(q/defsketch example                  ;; Define a new sketch named example
+  :title "Oh so many grey circles"    ;; Set the title of the sketch
+  :setup setup                        ;; Specify the setup fn
+  :draw draw                          ;; Specify the draw fn
+  :size [323 200])                    ;; You struggle to beat the golden ratio
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn setup []
   ; Set frame rate to 30 frames per second.
