@@ -31,3 +31,6 @@
               (let [[f' & args'] (map (partial my-eval env) exp)]
                 (apply f' args'))))
     exp))
+
+;; Implementing core functions - Paper of John McCarthy
+;; http://www-formal.stanford.edu/jmc/recursive.pdf
