@@ -14,6 +14,16 @@
     (my-reduce f (f init (first coll)) (rest coll))))
 
 
+;; comp implemented from scratch
+
+(defn comp [& fs]         ; takes a variable number of functions as input
+  (let [fs (reverse fs)]  ; and applies them from right to left
+    (fn [& args]
+      (loop [ret (apply (first fs) args) fs (next fs)]
+        (if fs
+          (recur ((first fs) ret) (next fs))
+          ret)))))
+
 ;; A Lisp interpreter
 ;; http://www.lispcast.com/the-most-important-idea-in-computer-science
 

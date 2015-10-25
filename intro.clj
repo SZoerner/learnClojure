@@ -284,6 +284,14 @@ someval
 ;; http://clj-me.cgrand.net/2011/08/19/conways-game-of-life/
 ;; http://programmablelife.blogspot.de/2012/08/conways-game-of-life-in-clojure.html
 
+;;; ===========================================================================
+;;; == Metadata ===============================================================
+;;; ===========================================================================
+
+;; - :pre and :post conditions
+;; - :test and the function 'test', clojure.test.with-test
+;; - adding Metadata to existing vars
+
 
 ;;; ===========================================================================
 ;;; == core.async =============================================================
