@@ -4,6 +4,9 @@
 ;;; == A gentle introduction into Clojure =====================================
 ;;' ===========================================================================
 
+; Learn Clojure in 15 minutes, perhaps
+; https://gist.github.com/adambard/5855667
+
 ; Hello World
 
 "Hello World"
