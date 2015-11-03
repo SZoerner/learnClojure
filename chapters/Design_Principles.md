@@ -1,8 +1,9 @@
 # Tag 2 - Design Principles
 
-Gratulation - du bist immer noch hier :)
-Im weiteren geht es um einige grundlegende Denkansätze und Methodiken, welche vor allem auf Datenunveränderbarkeit und Funktionen höherer Ordnung beruhen.
+Congratulations - you are still here :)
 
-Die heutigen Fragen sind daher abstrakterer Natur:
+The following chapters include some rather fundamental concepts and methods: mainly Immuatability and Hihger Order Functions.
 
-1. Wie kann man ohne Klassen seine Anwendung strukturieren?
+Therefore today's key questionsare more abstract:
+
+1. How can I structure my application without classes?
