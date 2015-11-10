@@ -1,5 +1,5 @@
 # LightTable
 
-[LightTable](http://www.lighttable.com/) ist ein Texteditor. LightTable basiert auf node-webkit und wurde beinahe komplett mittels [Clojurescript](https://github.com/clojure/clojurescript) (ein Subset von Clojure, welches in natives Javascript kompiliert werden kann) geschrieben.
+[LightTable](http://www.lighttable.com/) is at first a text editor. Based on node-webkit it is almost entirely written using [Clojurescript](https://github.com/clojure/clojurescript) (a subset of Clojure compiling to Javascript).
 
-LightTable ermöglicht es, schnell Feedback zu geben.
+The most intriguing feature of LightTable is the rapid feedback of the LiveREPL.
