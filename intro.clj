@@ -391,3 +391,10 @@ someval
 
 ;; SQL as Clojure data structures.
 ;; https://github.com/jkk/honeysql
+
+;;; ===========================================================================
+;;; == Data Science ===============================================================
+;;; ===========================================================================
+
+;; example in Python and R:
+;; https://www.dataquest.io/blog/python-vs-r/
