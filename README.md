@@ -1,8 +1,7 @@
 learnClojure
 ============
 
-This tutorial is written as a [Gitbook](http://www.gitbook.io/), is published under the [WTFPL-2.0](https://www.tldrlegal.com/l/wtfpl) License
-and is availiable online [here](http://szoerner.github.io/learnClojure).
+This tutorial is written as a [Gitbook](http://www.gitbook.io/), is published under the [WTFPL-2.0](https://www.tldrlegal.com/l/wtfpl) License and is availiable online [here](http://szoerner.github.io/learnClojure).
 
 ## Outline
 
