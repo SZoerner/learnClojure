@@ -6,7 +6,7 @@
 
 ### Concepts practised
 
-- Higer-Order Functions
+- Higher-Order Functions
 - Anonymous Functions
 - Clojure Syntactic Sugar
 
