@@ -2,8 +2,7 @@
 
 Congratulations - you are still here :)
 
-The following chapters include some rather fundamental concepts and methods: mainly Immutability and Higher Order Functions.
-
-Therefore today's key questions are more abstract:
+We wil now go into some fundamental concepts and methods: Immutability and Higher Order Functions.
+Today's key questions are:
 
 1. How can I structure my application without classes?
