@@ -13,6 +13,9 @@
   (if (empty? coll) init
     (my-reduce f (f init (first coll)) (rest coll))))
 
+;; comp implemented from scratch
+(defn my-flatten [x]
+  (mapcat #(if (coll? %) (my-flatten %) [%]) x))
 
 ;; comp implemented from scratch
 
@@ -44,3 +47,14 @@
 
 ;; Implementing core functions - Paper of John McCarthy
 ;; http://www-formal.stanford.edu/jmc/recursive.pdf
+
+
+
+;; Quicksort using quasiquoting: inspired by the
+;; [Haskell Introduction](https://wiki.haskell.org/Introduction)
+
+(defn qsort [[pvt & rs]]
+  (if pvt
+    `(~@(qsort (filter #(<  % pvt) rs))
+      ~pvt
+      ~@(qsort (filter #(>= % pvt) rs)))))
