@@ -75,3 +75,8 @@
                   n))))
           (constantly 0)
                      comparators))
+
+;; implementing comp
+(defn comp [& fs]
+  (fn [& xs]
+    (first (reduce #(vector (apply %2 %1)) xs (reverse fs)))))
