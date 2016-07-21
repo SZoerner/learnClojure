@@ -58,3 +58,20 @@
     `(~@(qsort (filter #(<  % pvt) rs))
       ~pvt
       ~@(qsort (filter #(>= % pvt) rs)))))
+
+;; == Interesting uses of reduce
+
+;; path-walking nested maps
+(reduce get {:a {:b {:c 42}}} [:a :b :c]) ;42
+
+;; composing comparators
+;; fun fact: the accumulator does not need to be a collection, but can be anything - including a function
+(defn compose-comparators [comparators]
+  (reduce (fn [composed-comparator comparator]
+            (fn [a b]
+              (let [n (composed-comparator a b)]
+                (if (zero? n)
+                  (comparator a b)
+                  n))))
+          (constantly 0)
+                     comparators))
