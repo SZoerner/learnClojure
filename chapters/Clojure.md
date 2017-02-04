@@ -4,11 +4,12 @@
 
 * A [short introduction into edn](https://github.com/edn-format/edn): basically read through the whole document.
 
-### Summary:  
-1. *Blanks* and *Commata* are whitespace and therefore optional.  
+### Summary:
+
+1. _Blanks_ and _Commata_ are whitespace and therefore optional.  
 2. _Primitive elements_ are: `nil` \(or null or nothing\), `true`/`false`, `Strings`, `Characters`, `symbols`, `keywords` \(sort of like Java's enum values\), `integers`, `floats`.  
 3. Collections: `lists`, `vectors` \(arrays\), `maps` and `sets`  .
-4. The notion of Equality. (sort of like `deepEquals` all the way down - or or equality on future Java's Value Types).
+4. The notion of Equality. \(sort of like `deepEquals` all the way down - or or equality on future Java's Value Types\).
 
 ## Clojure
 
@@ -55,10 +56,10 @@ Ok, great - so now, in addition to the syntax you just learned 98% of Clojure's 
 More than the edn data format, Clojure is:
 
 * a LISP
-* for the JVM (but also for the web, as [ClojureScript](https://clojurescript.org/ "ClojureScript"))
-* with focus on _data immutability_ (basically meaning: once a variable has been assigned to a value, it does not change)
+* for the JVM \(but also for the web, as [ClojureScript](https://clojurescript.org/ "ClojureScript")\)
+* with focus on _data immutability_ \(basically meaning: once a variable has been assigned to a value, it does not change\)
 
-While the first property (syntax) seems to be the main entrance barrier, it is the third property that lets Clojure shine. It is after all the foundation for the Clojure concurrency model.
+While the first property \(syntax\) seems to be the main entrance barrier, it is the third property that lets Clojure shine. It is after all the foundation for the Clojure concurrency model.
 
 ## A syntax comparison
 
@@ -77,15 +78,16 @@ The same function call in Clojure would be:
 These are the differences:
 
 1. The open parenthesis appears **left** to the name of the called function - `print("hi")` becomes `(print "hi")`.
-2. There are no commata separating arguments (there can, but they are considered whitespace and thus being ignored), nor semicolons at the end of statements (`;` in fact, starts a comment line).
+2. There are no commata separating arguments \(there can, but they are considered whitespace and thus being ignored\), nor semicolons at the end of statements \(`;` in fact, starts a comment line\).
 3. Via convention the function names are styled with hyphens instead of CamelCase.
 
 .. not that hard, is it?
 
-========================================  
+---
+
 Let's do a fictional "translation" to turn Clojure into Java code
 
-* Step 1: Move all parenthesis one position to the right - now the scary paren hell becomes plain nested function calls.
+* Step 1: Move all opening parenthesis one position to the right - now the scary paren hell becomes plain nested function calls.
 * Step 2. Place the first parameter in front of the function so you have an object to call the function on.
 * Step 3: add commata and semicolon.
 
@@ -98,9 +100,13 @@ Example:
 1.+(2, 3); ; commata and semicolon
 ```
 
+Smart as you are you have noticed: calling `+` as a method on the object 1 is not valid Java
+
+
+
 The other way round - Java =&gt; Clojure:
 
-* Step 1: Pass the object as the first parameter to th function "**.**".
+* Step 1: Pass the object as the first parameter to the function "**.**".
 
 Java's
 
