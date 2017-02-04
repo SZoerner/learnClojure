@@ -13,6 +13,9 @@
   (if (empty? coll) init
     (my-reduce f (f init (first coll)) (rest coll))))
 
+;; comp implemented from scratch
+(defn my-flatten [x]
+  (mapcat #(if (coll? %) (my-flatten %) [%]) x))
 
 ;; comp implemented from scratch
 
@@ -44,3 +47,36 @@
 
 ;; Implementing core functions - Paper of John McCarthy
 ;; http://www-formal.stanford.edu/jmc/recursive.pdf
+
+
+
+;; Quicksort using quasiquoting: inspired by the
+;; [Haskell Introduction](https://wiki.haskell.org/Introduction)
+
+(defn qsort [[pvt & rs]]
+  (if pvt
+    `(~@(qsort (filter #(<  % pvt) rs))
+      ~pvt
+      ~@(qsort (filter #(>= % pvt) rs)))))
+
+;; == Interesting uses of reduce
+
+;; path-walking nested maps
+(reduce get {:a {:b {:c 42}}} [:a :b :c]) ;42
+
+;; composing comparators
+;; fun fact: the accumulator does not need to be a collection, but can be anything - including a function
+(defn compose-comparators [comparators]
+  (reduce (fn [composed-comparator comparator]
+            (fn [a b]
+              (let [n (composed-comparator a b)]
+                (if (zero? n)
+                  (comparator a b)
+                  n))))
+          (constantly 0)
+                     comparators))
+
+;; implementing comp
+(defn comp [& fs]
+  (fn [& xs]
+    (first (reduce #(vector (apply %2 %1)) xs (reverse fs)))))
