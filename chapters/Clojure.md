@@ -56,9 +56,9 @@ More than the edn data format, Clojure is:
 
 * a LISP
 * for the JVM (but also for the web, as [ClojureScript](https://clojurescript.org/ "ClojureScript"))
-* with focus on _data immutability_ \(basically meaning: once a variable has been assigned to a value, it does not change\)
+* with focus on _data immutability_ (basically meaning: once a variable has been assigned to a value, it does not change)
 
-While the first property \(syntax\) seems to be the main entrance barrier, it is the third property that lets Clojure shine. It is after all the foundation for the CLojure concurrency model.
+While the first property (syntax) seems to be the main entrance barrier, it is the third property that lets Clojure shine. It is after all the foundation for the Clojure concurrency model.
 
 ## A syntax comparison
 
