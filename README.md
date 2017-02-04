@@ -1,6 +1,6 @@
 # LearnClojure
 
-This tutorial is a [Gitbook](http://www.gitbook.io/), published under the [WTFPL-2.0](https://www.tldrlegal.com/l/wtfpl) License and available online [here](http://szoerner.github.io/learnClojure).
+This tutorial is a [Gitbook](http://www.gitbook.io/), published under the MIT License and available online [here](https://szoerner.gitbooks.io/learnclojure/content/).
 
 ## Outline
 

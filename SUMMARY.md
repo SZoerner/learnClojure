@@ -1,13 +1,13 @@
 # Summary
 
 * [Introduction](README.md)
-* [Tag 1 - Up and Running](chapters/Up_and_Running.md)
+* [Day 1 - Up and Running](chapters/Up_and_Running.md)
    * [Setup](chapters/Setup.md)
    * [Clojure](chapters/Clojure.md)
    * [LightTable](chapters/LightTable.md)
    * [Test-Driven Development](chapters/TDD.md)
    * [Property-Based Testing](chapters/Property-Based_Testing.md)
-* [Tag 2 - Design Principles](chapters/Design_Principles.md)
+* [Day 2 - Design Principles](chapters/Design_Principles.md)
    * [Homoiconicity](chapters/Homoiconicity.md)
    * [Functional Programming](chapters/Functional_Programming.md)
    * [Higher Order Functions](chapters/Higher_Order_Functions.md)
