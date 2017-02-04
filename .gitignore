@@ -1,15 +1,3 @@
-pom.xml
-pom.xml.asc
-*jar
 /_book/
 /lib/
 /node_modules/
-/classes/
-/target/
-/checkouts/
-.grunt/
-.lein-deps-sum
-.lein-repl-history
-.lein-plugins/
-.lein-failures
-.project
