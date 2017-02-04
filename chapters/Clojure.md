@@ -4,10 +4,10 @@
 
 * A [short introduction into edn](https://github.com/edn-format/edn): basically read through the whole document.
 
-Summary:  
-1. Blanks and Commas are whitespace and therefore optional.  
-2. Primitive elements are: nil \(or null or nothing\), true/false, Strings, Characters, symbols, keywords \(sort of like Java's enum values\), integers, floats.  
-3. Collections: lists, vectors \(arrays\), maps, sets  
+### Summary:  
+1. *Blanks* and *Commata* are whitespace and therefore optional.  
+2. _Primitive elements_ are: `nil` \(or null or nothing\), `true`/`false`, `Strings`, `Characters`, `symbols`, `keywords` \(sort of like Java's enum values\), `integers`, `floats`.  
+3. Collections: `lists`, `vectors` \(arrays\), `maps` and `sets`  .
 4. The notion of Equality.
 
 ## Clojure
