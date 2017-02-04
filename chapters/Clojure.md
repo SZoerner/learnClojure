@@ -48,14 +48,14 @@ If you DO however actually want a list data structure, you can tell the reader \
 '(1 2 3)
 ```
 
-Ok, great - so now, in addition to the syntax you just learned 98% of Clojure's `semantics` as well.
+Ok, great - so now, in addition to the syntax you just learned 98% of Clojure's _semantics_ as well.
 
 ## Overview
 
 More than the edn data format, Clojure is:
 
 * a LISP
-* for the JVM
+* for the JVM (but also for the web, as [ClojureScript](https://clojurescript.org/ "ClojureScript"))
 * with focus on _data immutability_ \(basically meaning: once a variable has been assigned to a value, it does not change\)
 
 While the first property \(syntax\) seems to be the main entrance barrier, it is the third property that lets Clojure shine. It is after all the foundation for the CLojure concurrency model.
