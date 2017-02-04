@@ -65,19 +65,19 @@ While the first property (syntax) seems to be the main entrance barrier, it is t
 In C-like programming languages a function call mainly looks like this:
 
 ```Java
-doSomethingWith(value1, value2);
+object.doSomethingWith(value1, value2);
 ```
 
 The same function call in Clojure would be:
 
 ```Clojure
-(do-something-with value1 value2)
+(do-something-with object value1 value2)
 ```
 
 These are the differences:
 
 1. The open parenthesis appears **left** to the name of the called function - `print("hi")` becomes `(print "hi")`.
-2. There are no commas separating arguments \(there can, but they are considered whitespace and thus being ignored\), nor semicolons at the end of statements \(`;` starts a comment line\).
+2. There are no commata separating arguments (there can, but they are considered whitespace and thus being ignored), nor semicolons at the end of statements (`;` in fact, starts a comment line).
 3. Via convention the function names are styled with hyphens instead of CamelCase.
 
 .. not that hard, is it?
