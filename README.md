@@ -1,5 +1,4 @@
-LearnClojure
-============
+# LearnClojure
 
 This tutorial is a [Gitbook](http://www.gitbook.io/), published under the [WTFPL-2.0](https://www.tldrlegal.com/l/wtfpl) License and available online [here](http://szoerner.github.io/learnClojure).
 
@@ -10,9 +9,9 @@ This tutorial is a [Gitbook](http://www.gitbook.io/), published under the [WTFPL
 1. Clojure and Leiningen [Setup](chapters/Setup.md), using the REPL
 2. Introduction to [Clojure](chapters/Clojure.md)
 3. [LightTable](chapters/LightTable.md) as an editor
-5. [Test-Driven Development](chapters/TDD.md) with clojure.test
-6. [Property-Based Testing](chapters/Property-Based_Testing.md) using test.check
-7. Project Euler exercises
+4. [Test-Driven Development](chapters/TDD.md) with clojure.test
+5. [Property-Based Testing](chapters/Property-Based_Testing.md) using test.check
+6. Project Euler exercises
 
 ### Part 2 - Design Principles
 
@@ -21,3 +20,6 @@ This tutorial is a [Gitbook](http://www.gitbook.io/), published under the [WTFPL
 3. [Functional Programming](Functional_Programming.md): Higher-Order Functions
 4. Taking Things Apart: IDKAIDWK, Protocols and Deftype, Datomic
 5. [Lazy Evaluation](Lazy_Evaluation.md) & Infinite Data Structures
+
+
+
