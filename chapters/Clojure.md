@@ -100,9 +100,7 @@ Example:
 1.+(2, 3); ; commata and semicolon
 ```
 
-Smart as you are you have noticed: calling `+` as a method on the object 1 is not valid Java
-
-
+Smart as you are you have noticed: calling `+` as a method on the object 1 is not valid Java. 
 
 The other way round - Java =&gt; Clojure:
 
