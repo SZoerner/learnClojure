@@ -15,9 +15,7 @@ Summary:
 The essence: Clojure is .. \(dramatic silence\) .. edn. Period. You just learned all of Clojure's syntax. Try some edn forms in the REPL:
 
 ```eval-clojure
-user=> 1
 1
-user=> "one two three"
 ```
 
 
