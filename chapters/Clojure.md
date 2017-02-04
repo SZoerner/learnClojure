@@ -12,7 +12,7 @@
 
 ## Clojure
 
-The essence: Clojure is .. \(dramatic silence\) .. edn. Period. You just learned all of Clojure's syntax. Try some edn forms in the REPL:
+In essence: Clojure is .. \(dramatic silence\) .. edn. Period. You just learned all of Clojure's syntax. Try some edn forms in the REPL:
 
 ```eval-clojure
 1
