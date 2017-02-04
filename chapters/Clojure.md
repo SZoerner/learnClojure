@@ -18,8 +18,6 @@ The essence: Clojure is .. \(dramatic silence\) .. edn. Period. You just learned
 1
 ```
 
-
-
 ```eval-clojure
 "one two three"
 ```
