@@ -44,9 +44,8 @@ Wait.. what?? Ok, you got me. Lists are different than the other collection type
 
 If you DO however actually want a list data structure, you can tell the reader \(the Clojure reader program, that is\) by `quoting` the list using a `'` \(called _quote_\):
 
-```Clojure
-user=> '(1 2 3)
-(1 2 3)
+```eval-clojure
+'(1 2 3)
 ```
 
 Ok, great - so now, in addition to the syntax you just learned 98% of Clojure's `semantics` as well.
