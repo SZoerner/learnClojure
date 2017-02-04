@@ -26,8 +26,7 @@ The essence: Clojure is .. \(dramatic silence\) .. edn. Period. You just learned
 
 Yeaaaah.. so you got your own digital parrot now. Not that exiting. Let's try something more advanced - collections:
 
-```Clojure
-user=> [1 2 3]
+```eval-clojure
 [1 2 3]
 user=> #{1 2 3}
 #{1 2 3}
