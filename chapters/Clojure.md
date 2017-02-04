@@ -8,7 +8,7 @@
 1. *Blanks* and *Commata* are whitespace and therefore optional.  
 2. _Primitive elements_ are: `nil` \(or null or nothing\), `true`/`false`, `Strings`, `Characters`, `symbols`, `keywords` \(sort of like Java's enum values\), `integers`, `floats`.  
 3. Collections: `lists`, `vectors` \(arrays\), `maps` and `sets`  .
-4. The notion of Equality.
+4. The notion of Equality. (sort of like `deepEquals` all the way down - or or equality on future Java's Value Types).
 
 ## Clojure
 
