@@ -36,11 +36,6 @@ Yeaaaah.. so you got your own digital parrot now. Not that exiting. Let's try so
 (1 3 4)
 ```
 
-
-
-
-
-
 Wait.. what?? Ok, you got me. Lists are different than the other collection types. What happens here is that Clojure fails as it _tries to evaluate the first element \(1 in this case\) as a function_. Right, forms in brackets are treated as function calls - specifically: calling the first element as the function, passing it the rest of the elements as arguments.
 
 ```Clojure
