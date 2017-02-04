@@ -38,9 +38,8 @@ Yeaaaah.. so you got your own digital parrot now. Not that exiting. Let's try so
 
 Wait.. what?? Ok, you got me. Lists are different than the other collection types. What happens here is that Clojure fails as it _tries to evaluate the first element \(1 in this case\) as a function_. Right, forms in brackets are treated as function calls - specifically: calling the first element as the function, passing it the rest of the elements as arguments.
 
-```Clojure
-user=> (+ 1 2)
-3
+```eval-clojure
+(+ 1 2)
 ```
 
 If you DO however actually want a list data structure, you can tell the reader \(the Clojure reader program, that is\) by `quoting` the list using a `'` \(called _quote_\):
