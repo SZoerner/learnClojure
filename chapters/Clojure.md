@@ -4,7 +4,7 @@
 
 * A [short introduction into edn](https://github.com/edn-format/edn): basically read through the whole document.
 
-### Summary:
+### Summary: 
 
 1. _Blanks_ and _Commata_ are whitespace and therefore optional.  
 2. _Primitive elements_ are: `nil` \(or null or nothing\), `true`/`false`, `Strings`, `Characters`, `symbols`, `keywords` \(sort of like Java's enum values\), `integers`, `floats`.  
@@ -100,7 +100,7 @@ Example:
 1.+(2, 3); ; commata and semicolon
 ```
 
-Smart as you are you have noticed: calling `+` as a method on the object 1 is not valid Java. 
+Smart as you are you have noticed: calling `+` as a method on the object 1 is not valid Java.
 
 The other way round - Java =&gt; Clojure:
 
